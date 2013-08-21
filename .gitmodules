@@ -1,3 +1,6 @@
 [submodule "max6-sdk"]
 	path = max6-sdk
 	url = https://github.com/Cycling74/max6-sdk.git
+[submodule "rtmsdk-mac"]
+	path = rtmsdk-mac
+	url = https://github.com/ogata-lab/rtmsdk-mac.git
