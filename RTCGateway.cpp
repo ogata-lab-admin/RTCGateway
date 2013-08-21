@@ -123,15 +123,9 @@ void RTCGateway_init()
     class_register(CLASS_BOX, RTCGateway_class);
 }
 
-void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
+
+void RTM_init()
 {
-    t_RTCGateway *x = NULL;
-    if (argc == 0) {
-        post("RTCGateway may accept one argument which is to be an RTC's name.");
-    }
-    
-	x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);
-    
     if (manager == NULL) {
         int argc = 1;
         char pgm[] = "RTCGateway";
@@ -142,6 +136,18 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         manager->activateManager();
         manager->runManager(true);
     }
+}
+
+void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
+{
+    t_RTCGateway *x = NULL;
+    if (argc == 0) {
+        post("RTCGateway may accept one argument which is to be an RTC's name.");
+    }
+    
+	x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);
+    
+    RTM_init();
     ref_count ++;
 
     return x;

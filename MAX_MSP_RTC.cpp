@@ -12,9 +12,15 @@
 #endif
 
 
+
 #include "MAX_MSP_RTC.h"
 
 #include "RTMPort.h"
+
+#include "ext.h"
+#include "ext_obex.h" // MAXプラグイン用ヘッダ
+
+#include "LongOut.h"
 
 
 // Module specification
@@ -52,6 +58,7 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
 {
     for (int i = 0;i < MAX_PORT;i++) {
         m_longOutOut[i] = NULL;
+        m_longInIn[i] = NULL;
     }
 }
 
@@ -62,6 +69,7 @@ MAX_MSP_RTC::~MAX_MSP_RTC()
 {
     for (int i = 0;i < MAX_PORT;i++) {
         delete m_longOutOut[i];
+        delete m_longInIn[i];
     }
 }
 
@@ -82,6 +90,28 @@ void MAX_MSP_RTC::deleteLongOutPort(const int id) {
             this->deletePort(*(m_longOutOut[id]));
             delete m_longOutOut[id];
             m_longOutOut[id] = NULL;
+        }
+    }
+}
+
+int MAX_MSP_RTC::addLongInPort(t_object* x, const char* name) {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_longInIn[i] == NULL) {
+            m_longInIn[i] = new InPort<TimedLong>(name, m_longIn[i]);
+            m_longObjectList[i] = x;
+            addInPort(name, *m_longInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteLongInPort(const int id) {
+    if (id < MAX_PORT && id >= 0) {
+        if (m_longInIn[id] != NULL) {
+            this->deletePort(*(m_longInIn[id]));
+            delete m_longInIn[id];
+            m_longInIn[id] = NULL;
         }
     }
 }
@@ -146,6 +176,14 @@ RTC::ReturnCode_t MAX_MSP_RTC::onDeactivated(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
 {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_longInIn[i] != NULL) {
+            if (m_longInIn[i]->isNew()) {
+                m_longInIn[i]->read();
+                LongOut_write(m_longObjectList[i], m_longIn[i].data);
+            }
+        }
+    }
   return RTC::RTC_OK;
 }
 

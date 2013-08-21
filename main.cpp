@@ -11,13 +11,17 @@
 #include "RTMPort.h" // RTCとの連絡用関数宣言
 #include "RTCGateway.h"
 #include "LongIn.h"
+#include "LongOut.h"
 
 
 int C74_EXPORT main(void)
 {
+    RTM_init();
+    
     RTCGateway_init();
 
     LongIn_init();
+    LongOut_init();
 
     
 	return 0;

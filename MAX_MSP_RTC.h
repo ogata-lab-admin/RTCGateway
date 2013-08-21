@@ -31,6 +31,9 @@
 
 using namespace RTC;
 
+#include "ext.h"
+#include "ext_obex.h"
+
 /*!
  * @class MAX_MSP_RTC
  * @brief Max/Msp intermediate module 
@@ -271,12 +274,21 @@ public:
     
 #define MAX_PORT 16
     
+    // For TimedLong OutPort
     RTC::TimedLong m_longOut[MAX_PORT];
-
     OutPort<RTC::TimedLong>* m_longOutOut[MAX_PORT];
     
     int addLongOutPort(const char* name);
     void deleteLongOutPort(const int id);
+
+    // For TimedLong InPort
+    RTC::TimedLong m_longIn[MAX_PORT];
+    InPort<RTC::TimedLong>* m_longInIn[MAX_PORT];
+    t_object* m_longObjectList[MAX_PORT];
+
+    int addLongInPort(t_object *x, const char* name);
+    void deleteLongInPort(const int id);
+
 };
 
 

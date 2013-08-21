@@ -17,7 +17,7 @@
                BlueprintIdentifier = "2FBBEAD608F335360078DB84"
                BuildableName = "RTCGateway.mxo"
                BlueprintName = "max-external"
-               ReferencedContainer = "container:RTCGateway-i386.xcodeproj">
+               ReferencedContainer = "container:RTC-i386.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

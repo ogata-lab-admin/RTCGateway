@@ -18,14 +18,6 @@
 #include "LongIn.h"
 
 
-/**
- * MAX用オブジェクト
- */
-typedef struct _LongIn
-{
-    t_object ob; // MAXオブジェクトデータ（構造体の先頭固定）
-    int portId;
-} t_LongIn;
 
 // 関数のプロトタイプ宣言
 void *LongIn_new(t_symbol *s, long argc, t_atom *argv);

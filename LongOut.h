@@ -1,26 +1,27 @@
 //
-//  LongIn.h
+//  LongOut.h
 //  RTMPort-x86_64
 //
 //  Created by 菅 佑樹 on 2013/08/21.
 //
 //
 
-#ifndef RTMPort_x86_64_LongIn_h
-#define RTMPort_x86_64_LongIn_h
+#ifndef RTMPort_x86_64_LongOut_h
+#define RTMPort_x86_64_LongOut_h
 
 #include "RTMPort.h"
-
 
 /**
  * MAX用オブジェクト
  */
-typedef struct _LongIn
+typedef struct _LongOut
 {
     t_object ob; // MAXオブジェクトデータ（構造体の先頭固定）
+    void *m_outlet;
     int portId;
-} t_LongIn;
+} t_LongOut;
 
-void LongIn_init();
+void LongOut_init();
+void LongOut_write(t_object *x, long m);
 
 #endif
