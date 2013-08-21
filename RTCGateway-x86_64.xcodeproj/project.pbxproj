@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		09737C1517C1C6CE007379FE /* MAX_MSP_RTC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */; };
 		09737C1617C1C6CE007379FE /* MAX_MSP_RTC.h in Headers */ = {isa = PBXBuildFile; fileRef = 09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */; };
-		09810D0817C2739A00142B0B /* libcoil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09810D0717C2739A00142B0B /* libcoil.a */; };
-		09810D0A17C273A400142B0B /* libomniDynamic4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09810D0917C273A400142B0B /* libomniDynamic4.a */; };
-		09810D0C17C273BE00142B0B /* libomniORB4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09810D0B17C273BE00142B0B /* libomniORB4.a */; };
-		09810D0E17C273C800142B0B /* libomnithread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09810D0D17C273C800142B0B /* libomnithread.a */; };
-		09810D1017C273D300142B0B /* libRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09810D0F17C273D300142B0B /* libRTC.a */; };
 		0997588317C37A0400EFA41A /* RTMPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 0997588217C37A0400EFA41A /* RTMPort.h */; };
+		09B283AB17C4FA8400B9284A /* libRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B283A917C4FA8400B9284A /* libRTC.a */; };
+		09B283AC17C4FA8400B9284A /* libcoil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B283AA17C4FA8400B9284A /* libcoil.a */; };
+		09B283B017C4FA9700B9284A /* libomniDynamic4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B283AD17C4FA9700B9284A /* libomniDynamic4.a */; };
+		09B283B117C4FA9700B9284A /* libomniORB4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B283AE17C4FA9700B9284A /* libomniORB4.a */; };
+		09B283B217C4FA9700B9284A /* libomnithread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B283AF17C4FA9700B9284A /* libomnithread.a */; };
 		09B4985717C4F42E0095CB0D /* maxmspsdk.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 09B4985617C4F42E0095CB0D /* maxmspsdk.xcconfig */; };
 		09F7559017C483160078847D /* LongIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09F7558F17C483160078847D /* LongIn.cpp */; };
 		09FEA43917C4D4BC0035CDC5 /* RTCGateway.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09FEA43717C4D4BC0035CDC5 /* RTCGateway.cpp */; };
@@ -25,12 +25,12 @@
 /* Begin PBXFileReference section */
 		09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MAX_MSP_RTC.cpp; sourceTree = "<group>"; };
 		09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAX_MSP_RTC.h; sourceTree = "<group>"; };
-		09810D0717C2739A00142B0B /* libcoil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcoil.a; path = x86_64/lib/libcoil.a; sourceTree = "<group>"; };
-		09810D0917C273A400142B0B /* libomniDynamic4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniDynamic4.a; path = x86_64/lib/libomniDynamic4.a; sourceTree = "<group>"; };
-		09810D0B17C273BE00142B0B /* libomniORB4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniORB4.a; path = x86_64/lib/libomniORB4.a; sourceTree = "<group>"; };
-		09810D0D17C273C800142B0B /* libomnithread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomnithread.a; path = x86_64/lib/libomnithread.a; sourceTree = "<group>"; };
-		09810D0F17C273D300142B0B /* libRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRTC.a; path = x86_64/lib/libRTC.a; sourceTree = "<group>"; };
 		0997588217C37A0400EFA41A /* RTMPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPort.h; sourceTree = "<group>"; };
+		09B283A917C4FA8400B9284A /* libRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRTC.a; path = "rtmsdk-mac/x86_64/lib/libRTC.a"; sourceTree = "<group>"; };
+		09B283AA17C4FA8400B9284A /* libcoil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcoil.a; path = "rtmsdk-mac/x86_64/lib/libcoil.a"; sourceTree = "<group>"; };
+		09B283AD17C4FA9700B9284A /* libomniDynamic4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniDynamic4.a; path = "rtmsdk-mac/x86_64/lib/libomniDynamic4.a"; sourceTree = "<group>"; };
+		09B283AE17C4FA9700B9284A /* libomniORB4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniORB4.a; path = "rtmsdk-mac/x86_64/lib/libomniORB4.a"; sourceTree = "<group>"; };
+		09B283AF17C4FA9700B9284A /* libomnithread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomnithread.a; path = "rtmsdk-mac/x86_64/lib/libomnithread.a"; sourceTree = "<group>"; };
 		09B4985617C4F42E0095CB0D /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = maxmspsdk.xcconfig; sourceTree = "<group>"; };
 		09F7558E17C483060078847D /* LongIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongIn.h; sourceTree = "<group>"; };
 		09F7558F17C483160078847D /* LongIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LongIn.cpp; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09810D1017C273D300142B0B /* libRTC.a in Frameworks */,
-				09810D0E17C273C800142B0B /* libomnithread.a in Frameworks */,
-				09810D0C17C273BE00142B0B /* libomniORB4.a in Frameworks */,
-				09810D0817C2739A00142B0B /* libcoil.a in Frameworks */,
-				09810D0A17C273A400142B0B /* libomniDynamic4.a in Frameworks */,
+				09B283AB17C4FA8400B9284A /* libRTC.a in Frameworks */,
+				09B283AC17C4FA8400B9284A /* libcoil.a in Frameworks */,
+				09B283B017C4FA9700B9284A /* libomniDynamic4.a in Frameworks */,
+				09B283B117C4FA9700B9284A /* libomniORB4.a in Frameworks */,
+				09B283B217C4FA9700B9284A /* libomnithread.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,17 +59,17 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
+				09B283AD17C4FA9700B9284A /* libomniDynamic4.a */,
+				09B283AE17C4FA9700B9284A /* libomniORB4.a */,
+				09B283AF17C4FA9700B9284A /* libomnithread.a */,
+				09B283A917C4FA8400B9284A /* libRTC.a */,
+				09B283AA17C4FA8400B9284A /* libcoil.a */,
 				09B4985617C4F42E0095CB0D /* maxmspsdk.xcconfig */,
 				09FEA43717C4D4BC0035CDC5 /* RTCGateway.cpp */,
 				09FEA43817C4D4BC0035CDC5 /* RTCGateway.h */,
 				09F7558F17C483160078847D /* LongIn.cpp */,
 				09F7558E17C483060078847D /* LongIn.h */,
 				0997588217C37A0400EFA41A /* RTMPort.h */,
-				09810D0F17C273D300142B0B /* libRTC.a */,
-				09810D0D17C273C800142B0B /* libomnithread.a */,
-				09810D0B17C273BE00142B0B /* libomniORB4.a */,
-				09810D0917C273A400142B0B /* libomniDynamic4.a */,
-				09810D0717C2739A00142B0B /* libcoil.a */,
 				09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */,
 				09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */,
 				22CF11890EE9A7DF0054F513 /* main.cpp */,
@@ -229,14 +229,15 @@
 					"\"$(C74SUPPORT)/max-includes\"",
 					"\"$(C74SUPPORT)/msp-includes\"",
 					"\"$(C74SUPPORT)/jit-includes\"",
-					"/opt/universal/x86_64/include/openrtm-1.1/rtm/idl",
-					"/opt/universal/x86_64/include/openrtm-1.1",
-					"/opt/universal/x86_64/include/coil-1.1",
-					/opt/universal/x86_64/include,
+					"rtmsdk-mac/x86_64/include/openrtm-1.1/rtm/idl",
+					"rtmsdk-mac/x86_64/include/openrtm-1.1",
+					"rtmsdk-mac/x86_64/include/coil-1.1",
+					"rtmsdk-mac/x86_64/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/x86_64/lib\"",
+					"\"$(SRCROOT)/rtmsdk-mac/x86_64/lib\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
@@ -258,14 +259,15 @@
 					"\"$(C74SUPPORT)/max-includes\"",
 					"\"$(C74SUPPORT)/msp-includes\"",
 					"\"$(C74SUPPORT)/jit-includes\"",
-					"x86_64/include/coil-1.1",
-					"$(SRC_DIR)/x86_64/include",
-					"x86_64/include/openrtm-1.1",
-					"x86_64/include/openrtm-1.1/rtm/idl",
+					"rtmsdk-mac/x86_64/include/coil-1.1",
+					"rtmsdk-mac/x86_64/include",
+					"rtmsdk-mac/x86_64/include/openrtm-1.1",
+					"rtmsdk-mac/x86_64/include/openrtm-1.1/rtm/idl",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/x86_64/lib\"",
+					"\"$(SRCROOT)/rtmsdk-mac/x86_64/lib\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
