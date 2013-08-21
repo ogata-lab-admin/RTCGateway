@@ -18,12 +18,11 @@
 #include "LongIn.h"
 
 
-
 // 関数のプロトタイプ宣言
 void *LongIn_new(t_symbol *s, long argc, t_atom *argv);
 void LongIn_free(t_LongIn *x);
 void LongIn_assist(t_LongIn *x, void *b, long m, long a, char *s);
-void LongIn_write(t_LongIn *x, long m);
+
 
 t_class *LongIn_class;
 
@@ -33,7 +32,6 @@ void LongIn_init()
 {
     LongIn_class = class_new("LongIn", (method)LongIn_new, (method)LongIn_free, (long)sizeof(t_LongIn),
                                 0L, A_GIMME, 0);
-    class_addmethod(LongIn_class, (method)LongIn_write,	"in1", A_LONG, 0);
     class_register(CLASS_BOX, LongIn_class);
 }
 
@@ -45,13 +43,18 @@ void LongIn_assist(t_LongIn *x, void *b, long m, long a, char *s)
 
 void LongIn_free(t_LongIn *x)
 {
-    m_pRTC->deleteLongOutPort(x->portId);
+    m_pRTC->deleteLongInPort(x->portId);
 }
 
-void LongIn_write(t_LongIn *x, long m)
+void LongIn_doWrite(t_LongIn *x, t_symbol *s /* = NULL*/, long argc, t_atom *argv)
 {
-    m_pRTC->m_longOut[x->portId].data = m;
-    m_pRTC->m_longOutOut[x->portId]->write();
+    //outlet_int(x, argv[0].a_w.w_long);
+}
+
+void LongIn_write(t_object *x, long m)
+{
+    post("data is %d", m);
+    outlet_int(((t_LongIn*)x)->m_outlet, m);
 }
 
 void *LongIn_new(t_symbol *s, long argc, t_atom *argv)
@@ -63,10 +66,10 @@ void *LongIn_new(t_symbol *s, long argc, t_atom *argv)
     }
     
 	x = (t_LongIn *)object_alloc((t_class*)LongIn_class);
-    intin(x, 1);
-	x->portId = m_pRTC->addLongOutPort(argv[0].a_w.w_sym->s_name);
+    x->m_outlet = intout((t_object *)x);
+	x->portId = m_pRTC->addLongInPort((t_object*)x, argv[1].a_w.w_sym->s_name);
     if (x->portId < 0) {
-        post("LongIn failed to create TimedLongOutPort.");
+        post("LongIn failed to create TimedLong OutPort.");
         return NULL;
     }
 	return x;

@@ -31,6 +31,8 @@
 #include <rtm/idl/ExtendedDataTypesSkel.h>
 #include <rtm/idl/InterfaceDataTypesSkel.h>
 
+#include "LongIn.h"
+#include "LongOut.h"
 /**
  * MAX用オブジェクト
  */
@@ -115,7 +117,7 @@ void MyModuleInit(RTC::Manager* manager)
 
 void RTCGateway_init()
 {
-    RTCGateway_class = class_new("RTCGateway", (method)RTCGateway_new, (method)RTCGateway_free, (long)sizeof(t_RTCGateway),
+    RTCGateway_class = class_new("RTC", (method)RTCGateway_new, (method)RTCGateway_free, (long)sizeof(t_RTCGateway),
                                          0L, A_GIMME, 0);
     class_addmethod(RTCGateway_class, (method)RTCGateway_activate, "activate", A_DEFLONG, 0);
     class_addmethod(RTCGateway_class, (method)RTCGateway_deactivate, "deactivate", A_DEFLONG, 0);
@@ -141,8 +143,16 @@ void RTM_init()
 void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
 {
     t_RTCGateway *x = NULL;
-    if (argc == 0) {
+    if (argc < 2) {
         post("RTCGateway may accept one argument which is to be an RTC's name.");
+    } else {
+    
+    if (strcmp(argv[0].a_w.w_sym->s_name, "LongIn") == 0) {
+        return LongIn_new(s, argc, argv);
+    }
+    if (strcmp(argv[0].a_w.w_sym->s_name, "LongOut") == 0) {
+        return LongOut_new(s, argc, argv);
+    }
     }
     
 	x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);

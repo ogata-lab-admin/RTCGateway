@@ -41,7 +41,7 @@
 		09FEA43717C4D4BC0035CDC5 /* RTCGateway.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTCGateway.cpp; sourceTree = "<group>"; };
 		09FEA43817C4D4BC0035CDC5 /* RTCGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCGateway.h; sourceTree = "<group>"; };
 		22CF11890EE9A7DF0054F513 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		2FBBEAE508F335360078DB84 /* RTCGateway.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTCGateway.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FBBEAE508F335360078DB84 /* RTC.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTC.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		19C28FB4FE9D528D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FBBEAE508F335360078DB84 /* RTCGateway.mxo */,
+				2FBBEAE508F335360078DB84 /* RTC.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			);
 			name = "max-external";
 			productName = iterator;
-			productReference = 2FBBEAE508F335360078DB84 /* RTCGateway.mxo */;
+			productReference = 2FBBEAE508F335360078DB84 /* RTC.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
-				PRODUCT_NAME = RTCGateway;
+				PRODUCT_NAME = RTC;
 				VALID_ARCHS = x86_64;
 			};
 			name = Development;
@@ -279,7 +279,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
-				PRODUCT_NAME = RTCGateway;
+				PRODUCT_NAME = RTC;
 				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;

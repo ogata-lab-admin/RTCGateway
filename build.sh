@@ -1,5 +1,5 @@
 #!/bin/bash
-TARGET=RTCGateway
+TARGET=RTC
 
 mkdir -p externals
 

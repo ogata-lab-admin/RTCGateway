@@ -20,7 +20,7 @@
 #include "ext.h"
 #include "ext_obex.h" // MAXプラグイン用ヘッダ
 
-#include "LongOut.h"
+#include "LongIn.h"
 
 
 // Module specification
@@ -180,7 +180,7 @@ RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
         if (m_longInIn[i] != NULL) {
             if (m_longInIn[i]->isNew()) {
                 m_longInIn[i]->read();
-                LongOut_write(m_longObjectList[i], m_longIn[i].data);
+                LongIn_write(m_longObjectList[i], m_longIn[i].data);
             }
         }
     }

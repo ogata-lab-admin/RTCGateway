@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2FBBEAD608F335360078DB84"
-               BuildableName = "RTCGateway.mxo"
+               BuildableName = "RTC.mxo"
                BlueprintName = "max-external"
                ReferencedContainer = "container:RTC-x86_64.xcodeproj">
             </BuildableReference>
