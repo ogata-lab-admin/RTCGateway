@@ -288,6 +288,21 @@ public:
 
     int addLongInPort(t_object *x, const char* name);
     void deleteLongInPort(const int id);
+    
+    // For Timeddouble OutPort
+    RTC::TimedDouble m_doubleOut[MAX_PORT];
+    OutPort<RTC::TimedDouble>* m_doubleOutOut[MAX_PORT];
+    
+    int addDoubleOutPort(const char* name);
+    void deleteDoubleOutPort(const int id);
+    
+    // For TimedLong InPort
+    RTC::TimedDouble m_doubleIn[MAX_PORT];
+    InPort<RTC::TimedDouble>* m_doubleInIn[MAX_PORT];
+    t_object* m_doubleObjectList[MAX_PORT];
+    
+    int addDoubleInPort(t_object *x, const char* name);
+    void deleteDoubleInPort(const int id);
 
 };
 

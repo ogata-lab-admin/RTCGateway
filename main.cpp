@@ -12,6 +12,8 @@
 #include "RTCGateway.h"
 #include "LongIn.h"
 #include "LongOut.h"
+#include "DoubleIn.h"
+#include "DoubleOut.h"
 
 
 int C74_EXPORT main(void)
@@ -22,7 +24,8 @@ int C74_EXPORT main(void)
 
     LongIn_init();
     LongOut_init();
-
+    DoubleIn_init();
+    DoubleOut_init();
     
 	return 0;
 }

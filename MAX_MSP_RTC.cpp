@@ -59,6 +59,8 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
     for (int i = 0;i < MAX_PORT;i++) {
         m_longOutOut[i] = NULL;
         m_longInIn[i] = NULL;
+        m_doubleOutOut[i] = NULL;
+        m_doubleInIn[i] = NULL;
     }
 }
 
@@ -112,6 +114,49 @@ void MAX_MSP_RTC::deleteLongInPort(const int id) {
             this->deletePort(*(m_longInIn[id]));
             delete m_longInIn[id];
             m_longInIn[id] = NULL;
+        }
+    }
+}
+////----------------------double-----------------------/////
+int MAX_MSP_RTC::addDoubleOutPort(const char* name) {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_doubleOutOut[i] == NULL) {
+            m_doubleOutOut[i] = new OutPort<TimedDouble>(name, m_doubleOut[i]);
+            addOutPort(name, *m_doubleOutOut[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteDoubleOutPort(const int id) {
+    if (id < MAX_PORT && id >= 0) {
+        if (m_doubleOutOut[id] != NULL) {
+            this->deletePort(*(m_doubleOutOut[id]));
+            delete m_doubleOutOut[id];
+            m_doubleOutOut[id] = NULL;
+        }
+    }
+}
+
+int MAX_MSP_RTC::addDoubleInPort(t_object* x, const char* name) {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_doubleInIn[i] == NULL) {
+            m_doubleInIn[i] = new InPort<TimedDouble>(name, m_doubleIn[i]);
+            m_doubleObjectList[i] = x;
+            addInPort(name, *m_doubleInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteDoubleInPort(const int id) {
+    if (id < MAX_PORT && id >= 0) {
+        if (m_doubleInIn[id] != NULL) {
+            this->deletePort(*(m_doubleInIn[id]));
+            delete m_doubleInIn[id];
+            m_doubleInIn[id] = NULL;
         }
     }
 }
