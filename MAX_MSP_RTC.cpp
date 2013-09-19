@@ -61,6 +61,9 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
         m_longInIn[i] = NULL;
         m_doubleOutOut[i] = NULL;
         m_doubleInIn[i] = NULL;
+        m_Velocity2DOutOut[i] = NULL;
+        m_Velocity2DInIn[i]=NULL;
+        
     }
 }
 
@@ -72,9 +75,13 @@ MAX_MSP_RTC::~MAX_MSP_RTC()
     for (int i = 0;i < MAX_PORT;i++) {
         delete m_longOutOut[i];
         delete m_longInIn[i];
+        delete m_doubleOutOut[i];
+        delete m_doubleInIn[i];
+        delete m_Velocity2DOutOut[i];
+        delete m_Velocity2DInIn[i];
     }
 }
-
+////----------------------long-----------------------/////
 int MAX_MSP_RTC::addLongOutPort(const char* name) {
     for (int i = 0;i < MAX_PORT;i++) {
         if (m_longOutOut[i] == NULL) {
@@ -160,6 +167,53 @@ void MAX_MSP_RTC::deleteDoubleInPort(const int id) {
         }
     }
 }
+
+////----------------------velocity2d-----------------------/////
+
+int MAX_MSP_RTC::addVelocity2DOutPort(const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Velocity2DOutOut[i] == NULL) {
+            m_Velocity2DOutOut[i] = new OutPort<TimedVelocity2D>(name, m_Velocity2DOut[i]);
+            addOutPort(name, *m_Velocity2DOutOut[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteVelocity2DOutPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Velocity2DOutOut[id] != NULL) {
+            this->deletePort(*(m_Velocity2DOutOut[id]));
+            delete m_Velocity2DOutOut[id];
+            m_Velocity2DOutOut[id] = NULL;
+            
+        }
+    }
+}
+
+int MAX_MSP_RTC::addVelocity2DInPort(t_object* x, const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Velocity2DInIn[i] == NULL) {
+            m_Velocity2DInIn[i] = new InPort<TimedVelocity2D>(name, m_Velocity2DIn[i]);
+            m_Velocity2DObjectList[i] = x;
+            addInPort(name, *m_Velocity2DInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteVelocity2DInPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Velocity2DInIn[id] != NULL) {
+            this->deletePort(*(m_Velocity2DInIn[id]));
+            delete m_Velocity2DInIn[id];
+            m_Velocity2DInIn[id] = NULL;
+        }
+    }
+}
+
 
 RTC::ReturnCode_t MAX_MSP_RTC::onInitialize()
 {

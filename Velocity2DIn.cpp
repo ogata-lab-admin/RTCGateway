@@ -34,7 +34,7 @@ void Velocity2DIn_init(){
     class_register(CLASS_BOX, Velocity2DIn_class);
 }
 
-void *Velocity2D_new(t_symbol *s, long argc, t_atom *argv){
+void *Velocity2DIn_new(t_symbol *s, long argc, t_atom *argv){
     t_Velocity2DIn *x = NULL;
     if (argc == 0) {
         post("Velocity2D needs one argument thas means port_name.");

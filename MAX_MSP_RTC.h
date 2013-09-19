@@ -273,6 +273,29 @@ class MAX_MSP_RTC
 public:
     
 #define MAX_PORT 16
+    /*
+     --Todo--
+     inPort: battery TimedDouble, crrentPose TimedPose2D, bumper TimedBooleanSeq
+     outPort : targetVelocity TimedVelocity2D, poseUpdated TimedPose2D
+     
+     */
+    
+    //====================================
+    // For TimedVelocity2D OutPort
+    RTC::TimedVelocity2D m_Velocity2DOut[MAX_PORT];
+    OutPort<RTC::TimedVelocity2D>* m_Velocity2DOutOut[MAX_PORT];
+    
+    int addVelocity2DOutPort(const char* name);
+    void deleteVelocity2DOutPort(const int id);
+    
+    // For TimedVelocity2D Inport
+    RTC::TimedVelocity2D m_Velocity2DIn[MAX_PORT];
+    InPort<RTC::TimedVelocity2D>* m_Velocity2DInIn[MAX_PORT];
+    t_object* m_Velocity2DObjectList[MAX_PORT];
+    
+    int addVelocity2DInPort(t_object *x, const char* name);
+    void deleteVelocity2DInPort(const int id);
+    
     
     // For TimedLong OutPort
     RTC::TimedLong m_longOut[MAX_PORT];

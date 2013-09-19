@@ -23,6 +23,14 @@
 		09FEA43C17C4D5DF0035CDC5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09FEA43B17C4D5DF0035CDC5 /* main.cpp */; };
 		09FEA43F17C4DF190035CDC5 /* RTCGateway.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09FEA43D17C4DF190035CDC5 /* RTCGateway.cpp */; };
 		09FEA44017C4DF190035CDC5 /* RTCGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 09FEA43E17C4DF190035CDC5 /* RTCGateway.h */; };
+		C38F868417E151E90090DA06 /* DoubleIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38F868217E151E90090DA06 /* DoubleIn.cpp */; };
+		C38F868517E151E90090DA06 /* DoubleIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C38F868317E151E90090DA06 /* DoubleIn.h */; };
+		C38F869417E177860090DA06 /* DoubleOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38F869217E177860090DA06 /* DoubleOut.cpp */; };
+		C38F869517E177860090DA06 /* DoubleOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C38F869317E177860090DA06 /* DoubleOut.h */; };
+		C38F86A417E9BAE50090DA06 /* Velocity2DIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38F86A017E9BAE50090DA06 /* Velocity2DIn.cpp */; };
+		C38F86A517E9BAE50090DA06 /* Velocity2DIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C38F86A117E9BAE50090DA06 /* Velocity2DIn.h */; };
+		C38F86A617E9BAE50090DA06 /* Velocity2DOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38F86A217E9BAE50090DA06 /* Velocity2DOut.cpp */; };
+		C38F86A717E9BAE50090DA06 /* Velocity2DOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C38F86A317E9BAE50090DA06 /* Velocity2DOut.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +51,14 @@
 		09FEA43D17C4DF190035CDC5 /* RTCGateway.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTCGateway.cpp; sourceTree = "<group>"; };
 		09FEA43E17C4DF190035CDC5 /* RTCGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCGateway.h; sourceTree = "<group>"; };
 		2FBBEAE508F335360078DB84 /* RTC.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTC.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38F868217E151E90090DA06 /* DoubleIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleIn.cpp; sourceTree = "<group>"; };
+		C38F868317E151E90090DA06 /* DoubleIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleIn.h; sourceTree = "<group>"; };
+		C38F869217E177860090DA06 /* DoubleOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleOut.cpp; sourceTree = "<group>"; };
+		C38F869317E177860090DA06 /* DoubleOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleOut.h; sourceTree = "<group>"; };
+		C38F86A017E9BAE50090DA06 /* Velocity2DIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Velocity2DIn.cpp; sourceTree = "<group>"; };
+		C38F86A117E9BAE50090DA06 /* Velocity2DIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Velocity2DIn.h; sourceTree = "<group>"; };
+		C38F86A217E9BAE50090DA06 /* Velocity2DOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Velocity2DOut.cpp; sourceTree = "<group>"; };
+		C38F86A317E9BAE50090DA06 /* Velocity2DOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Velocity2DOut.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,22 +80,30 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
+				C38F869317E177860090DA06 /* DoubleOut.h */,
+				C38F868317E151E90090DA06 /* DoubleIn.h */,
 				09D36D1C17C50DB10091388A /* LongOut.h */,
+				C38F86A117E9BAE50090DA06 /* Velocity2DIn.h */,
+				C38F86A317E9BAE50090DA06 /* Velocity2DOut.h */,
+				09B8179617C4F22700AD18A6 /* LongIn.h */,
+				C38F869217E177860090DA06 /* DoubleOut.cpp */,
+				C38F868217E151E90090DA06 /* DoubleIn.cpp */,
 				09D36D1D17C50DB10091388A /* LongOut.cpp */,
+				C38F86A017E9BAE50090DA06 /* Velocity2DIn.cpp */,
+				C38F86A217E9BAE50090DA06 /* Velocity2DOut.cpp */,
+				09B8179517C4F22700AD18A6 /* LongIn.cpp */,
 				094CE57C17C4FAE7007E4292 /* libomniDynamic4.a */,
 				094CE57D17C4FAE7007E4292 /* libomniORB4.a */,
 				094CE57E17C4FAE7007E4292 /* libomnithread.a */,
 				094CE57817C4FADB007E4292 /* libRTC.a */,
 				094CE57917C4FADB007E4292 /* libcoil.a */,
 				09A4DADB17C4F5570051C86B /* maxmspsdk.xcconfig */,
-				09B8179517C4F22700AD18A6 /* LongIn.cpp */,
-				09B8179617C4F22700AD18A6 /* LongIn.h */,
+				09FEA43B17C4D5DF0035CDC5 /* main.cpp */,
 				09FEA43D17C4DF190035CDC5 /* RTCGateway.cpp */,
 				09FEA43E17C4DF190035CDC5 /* RTCGateway.h */,
-				09FEA43B17C4D5DF0035CDC5 /* main.cpp */,
-				09F7558C17C37D470078847D /* RTMPort.h */,
 				09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */,
 				09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */,
+				09F7558C17C37D470078847D /* RTMPort.h */,
 				19C28FB4FE9D528D11CA2CBB /* Products */,
 			);
 			name = iterator;
@@ -105,6 +129,10 @@
 				09FEA44017C4DF190035CDC5 /* RTCGateway.h in Headers */,
 				09B8179817C4F22700AD18A6 /* LongIn.h in Headers */,
 				09D36D1E17C50DB10091388A /* LongOut.h in Headers */,
+				C38F868517E151E90090DA06 /* DoubleIn.h in Headers */,
+				C38F869517E177860090DA06 /* DoubleOut.h in Headers */,
+				C38F86A517E9BAE50090DA06 /* Velocity2DIn.h in Headers */,
+				C38F86A717E9BAE50090DA06 /* Velocity2DOut.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +231,10 @@
 				09FEA43F17C4DF190035CDC5 /* RTCGateway.cpp in Sources */,
 				09B8179717C4F22700AD18A6 /* LongIn.cpp in Sources */,
 				09D36D1F17C50DB10091388A /* LongOut.cpp in Sources */,
+				C38F868417E151E90090DA06 /* DoubleIn.cpp in Sources */,
+				C38F869417E177860090DA06 /* DoubleOut.cpp in Sources */,
+				C38F86A417E9BAE50090DA06 /* Velocity2DIn.cpp in Sources */,
+				C38F86A617E9BAE50090DA06 /* Velocity2DOut.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

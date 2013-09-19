@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef RTMPort_x86_64_LongIn_h
-#define RTMPort_x86_64_LongIn_h
+#ifndef RTMPort_x86_64_Velocity2DIn_h
+#define RTMPort_x86_64_Velocity2DIn_h
 
 #include "RTMPort.h"
 
