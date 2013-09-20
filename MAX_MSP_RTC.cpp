@@ -22,6 +22,8 @@
 
 #include "LongIn.h"
 
+#include "DoubleIn.h"
+#include "Velocity2DIn.h"
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -280,6 +282,24 @@ RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
             if (m_longInIn[i]->isNew()) {
                 m_longInIn[i]->read();
                 LongIn_write(m_longObjectList[i], m_longIn[i].data);
+            }
+        }
+    }
+    
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_doubleInIn[i] != NULL) {
+            if (m_doubleInIn[i]->isNew()) {
+                m_doubleInIn[i]->read();
+                DoubleIn_write(m_doubleObjectList[i], m_doubleIn[i].data);
+            }
+        }
+    }
+    
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_Velocity2DInIn[i] != NULL) {
+            if (m_Velocity2DInIn[i]->isNew()) {
+                m_Velocity2DInIn[i]->read();
+                Velocity2DIn_write(m_Velocity2DObjectList[i], m_Velocity2DIn[i].data.vx, m_Velocity2DIn[i].data.vy, m_Velocity2DIn[i].data.va);
             }
         }
     }

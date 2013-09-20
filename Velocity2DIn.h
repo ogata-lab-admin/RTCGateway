@@ -18,8 +18,6 @@ typedef struct _Velocity2DIn
 {
     t_object ob; // MAXオブジェクトデータ（構造体の先頭固定）
     void *m_outlet1;
-    void *m_outlet2;
-    void *m_outlet3;
     int portId;
 } t_Velocity2DIn;
 

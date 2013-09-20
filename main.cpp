@@ -14,6 +14,8 @@
 #include "LongOut.h"
 #include "DoubleIn.h"
 #include "DoubleOut.h"
+#include "Velocity2DIn.h"
+#include "Velocity2DOut.h"
 
 
 int C74_EXPORT main(void)
@@ -26,6 +28,10 @@ int C74_EXPORT main(void)
     LongOut_init();
     DoubleIn_init();
     DoubleOut_init();
+    
+    /// Add by ysuga 20130920
+    Velocity2DIn_init();
+    Velocity2DOut_init();
     
 	return 0;
 }

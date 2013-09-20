@@ -41,9 +41,7 @@ void *Velocity2DIn_new(t_symbol *s, long argc, t_atom *argv){
         return NULL;
     }
     x = (t_Velocity2DIn *)object_alloc((t_class*)Velocity2DIn_class);
-    x->m_outlet1 = floatout((t_object *)x);
-    x->m_outlet2 = floatout((t_object *)x);
-    x->m_outlet3 = floatout((t_object *)x);
+    x->m_outlet1 = listout((t_object *)x);
     x->portId = m_pRTC->addVelocity2DInPort((t_object*)x, argv[1].a_w.w_sym->s_name);
     if (x->portId < 0) {
         post("Velocity2DIn failed to create TimedVelocity OutPort.");
@@ -67,11 +65,17 @@ void Velocity2DIn_doWrite(t_Velocity2DIn *x, t_symbol *s /* = NULL*/, double arg
     //outlet_int(x, argv[0].a_w.w_Double);
 }
 
-void Velocity2DIn_Write(t_object *x, double vx, double vy, double va){
+void Velocity2DIn_write(t_object *x, double vx, double vy, double va){
     post("data is vx:%f, vy:%f, va:%va", vx, vy, va);
-    outlet_float(((t_Velocity2DIn*)x)->m_outlet1, vx);
-    outlet_float(((t_Velocity2DIn*)x)->m_outlet2, vy);
-    outlet_float(((t_Velocity2DIn*)x)->m_outlet3, va);
+    t_atom list_value[3];
+    float value[3];
+    short i;
+    value[0] = vx;
+    value[1] = vy;
+    value[2] = va;
+    for (i=0; i < 3; i++) {
+        atom_setfloat(list_value+i, value[i]);
+    }
     
-    
+    outlet_list(((t_Velocity2DIn*)x)->m_outlet1, 0, 3, list_value);
 }
