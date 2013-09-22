@@ -21,9 +21,9 @@
 #include "ext_obex.h" // MAXプラグイン用ヘッダ
 
 #include "LongIn.h"
-
 #include "DoubleIn.h"
 #include "Velocity2DIn.h"
+#include "Pose2DIn.h"
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -59,6 +59,8 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
     // </rtc-template>
 {
     for (int i = 0;i < MAX_PORT;i++) {
+        m_Pose2DInIn[i] = NULL;
+        m_Pose2DOutOut[i] = NULL;
         m_longOutOut[i] = NULL;
         m_longInIn[i] = NULL;
         m_doubleOutOut[i] = NULL;
@@ -75,6 +77,8 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
 MAX_MSP_RTC::~MAX_MSP_RTC()
 {
     for (int i = 0;i < MAX_PORT;i++) {
+        delete m_Pose2DInIn[i];
+        delete m_Pose2DOutOut[i];
         delete m_longOutOut[i];
         delete m_longInIn[i];
         delete m_doubleOutOut[i];
@@ -83,6 +87,8 @@ MAX_MSP_RTC::~MAX_MSP_RTC()
         delete m_Velocity2DInIn[i];
     }
 }
+
+
 ////----------------------long-----------------------/////
 int MAX_MSP_RTC::addLongOutPort(const char* name) {
     for (int i = 0;i < MAX_PORT;i++) {
@@ -217,6 +223,52 @@ void MAX_MSP_RTC::deleteVelocity2DInPort(const int id){
 }
 
 
+////----------------------pose2d-----------------------/////
+
+int MAX_MSP_RTC::addPose2DOutPort(const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Pose2DOutOut[i] == NULL) {
+            m_Pose2DOutOut[i] = new OutPort<TimedPose2D>(name, m_Pose2DOut[i]);
+            addOutPort(name, *m_Pose2DOutOut[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deletePose2DOutPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Pose2DOutOut[id] != NULL) {
+            this->deletePort(*(m_Pose2DOutOut[id]));
+            delete m_Pose2DOutOut[id];
+            m_Pose2DOutOut[id] = NULL;
+            
+        }
+    }
+}
+
+int MAX_MSP_RTC::addPose2DInPort(t_object* x, const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Pose2DInIn[i] == NULL) {
+            m_Pose2DInIn[i] = new InPort<TimedPose2D>(name, m_Pose2DIn[i]);
+            m_Pose2DObjectList[i] = x;
+            addInPort(name, *m_Pose2DInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deletePose2DInPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Pose2DInIn[id] != NULL) {
+            this->deletePort(*(m_Pose2DInIn[id]));
+            delete m_Pose2DInIn[id];
+            m_Pose2DInIn[id] = NULL;
+        }
+    }
+}
+
 RTC::ReturnCode_t MAX_MSP_RTC::onInitialize()
 {
   // Registration: InPort/OutPort/Service
@@ -300,6 +352,15 @@ RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
             if (m_Velocity2DInIn[i]->isNew()) {
                 m_Velocity2DInIn[i]->read();
                 Velocity2DIn_write(m_Velocity2DObjectList[i], m_Velocity2DIn[i].data.vx, m_Velocity2DIn[i].data.vy, m_Velocity2DIn[i].data.va);
+            }
+        }
+    }
+    
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_Pose2DInIn[i] != NULL) {
+            if (m_Pose2DInIn[i]->isNew()) {
+                m_Pose2DInIn[i]->read();
+                Pose2DIn_write(m_Pose2DObjectList[i], m_Pose2DIn[i].data.position.x, m_Pose2DIn[i].data.position.y, m_Pose2DIn[i].data.heading);
             }
         }
     }

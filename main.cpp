@@ -16,7 +16,8 @@
 #include "DoubleOut.h"
 #include "Velocity2DIn.h"
 #include "Velocity2DOut.h"
-
+#include "Pose2DIn.h"
+#include "Pose2DOut.h"
 
 int C74_EXPORT main(void)
 {
@@ -32,6 +33,9 @@ int C74_EXPORT main(void)
     /// Add by ysuga 20130920
     Velocity2DIn_init();
     Velocity2DOut_init();
+    
+    Pose2DIn_init();
+    Pose2DOut_init();
     
 	return 0;
 }

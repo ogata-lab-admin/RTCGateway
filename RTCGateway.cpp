@@ -40,6 +40,9 @@
 #include "Velocity2DIn.h"
 #include "Velocity2DOut.h"
 
+#include "Pose2DIn.h"
+#include "Pose2DOut.h"
+
 
 /**
  * MAX用オブジェクト
@@ -172,6 +175,12 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         }
         if (strcmp(argv[0].a_w.w_sym->s_name, "Velocity2DOut") == 0){
             return Velocity2DOut_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "Pose2DIn") == 0){
+            return Pose2DIn_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "Pose2DOut") == 0){
+            return Pose2DOut_new(s, argc, argv);
         }
             
         

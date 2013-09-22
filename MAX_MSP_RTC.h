@@ -281,6 +281,21 @@ public:
      */
     
     //====================================
+    // For TimePose2D OutPort
+    RTC::TimedPose2D m_Pose2DOut[MAX_PORT];
+    OutPort<RTC::TimedPose2D>* m_Pose2DOutOut[MAX_PORT];
+    
+    int addPose2DOutPort(const char* name);
+    void deletePose2DOutPort(const int id);
+    
+    // Fro TimedPose2D InPort
+    RTC::TimedPose2D m_Pose2DIn[MAX_PORT];
+    InPort<RTC::TimedPose2D>* m_Pose2DInIn[MAX_PORT];
+    t_object* m_Pose2DObjectList[MAX_PORT];
+    
+    int addPose2DInPort(t_object *x, const char* name);
+    void deletePose2DInPort(const int id);
+    
     // For TimedVelocity2D OutPort
     RTC::TimedVelocity2D m_Velocity2DOut[MAX_PORT];
     OutPort<RTC::TimedVelocity2D>* m_Velocity2DOutOut[MAX_PORT];
