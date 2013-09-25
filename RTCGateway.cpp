@@ -43,6 +43,9 @@
 #include "Pose2DIn.h"
 #include "Pose2DOut.h"
 
+#include "BooleanSeqIn.h"
+#include "BooleanSeqOut.h"
+
 
 /**
  * MAX用オブジェクト
@@ -182,7 +185,12 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         if (strcmp(argv[0].a_w.w_sym->s_name, "Pose2DOut") == 0){
             return Pose2DOut_new(s, argc, argv);
         }
-            
+        if (strcmp(argv[0].a_w.w_sym->s_name, "BooleanSeqIn") == 0){
+            return BooleanSeqIn_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "BooleanSeqOut") == 0){
+            return BooleanSeqOut_new(s, argc, argv);
+        }
         
     }
    

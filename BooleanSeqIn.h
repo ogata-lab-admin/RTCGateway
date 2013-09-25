@@ -22,7 +22,7 @@ typedef struct _BooleanSeqIn
 } t_BooleanSeqIn;
 
 void BooleanSeqIn_init();
-void BooleanSeqIn_write(t_object *x, double right_bumper, double center_bumper, double left_bumper);
+void BooleanSeqIn_write(t_object *x, int argc, bool argv[]);//double right_bumper, double center_bumper, double left_bumper);
 void *BooleanSeqIn_new(t_symbol *s, long argc, t_atom *argv);
 
 #endif

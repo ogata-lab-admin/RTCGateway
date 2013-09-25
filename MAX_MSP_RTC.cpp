@@ -430,9 +430,7 @@ RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
         if (m_BooleanSeqInIn[i] != NULL) {
             if (m_BooleanSeqInIn[i]->isNew()) {
                 m_BooleanSeqInIn[i]->read();
-                BooleanSeqIn_write(m_BooleanSeqObjectList[i], m_BooleanSeqIn[i].data[0], m_BooleanSeqIn[i].data[1], m_BooleanSeqIn[i].data[2]);
-                //m_BooleanSeqIn[i].data[0]
-                //BooleanSeq_write（・・・）
+                BooleanSeqIn_write(m_BooleanSeqObjectList[i], m_BooleanSeqIn[i].data.length(), &(m_BooleanSeqIn[i].data[0]));
             }
         }
     }

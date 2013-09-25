@@ -66,7 +66,7 @@ void Velocity2DIn_doWrite(t_Velocity2DIn *x, t_symbol *s /* = NULL*/, double arg
 }
 
 void Velocity2DIn_write(t_object *x, double vx, double vy, double va){
-    post("data is vx:%f, vy:%f, va:%va", vx, vy, va);
+    post("data is vx:%f, vy:%f, va:%f", vx, vy, va);
     t_atom list_value[3];
     float value[3];
     short i;

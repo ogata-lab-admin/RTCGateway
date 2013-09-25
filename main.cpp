@@ -43,6 +43,6 @@ int C74_EXPORT main(void)
 
     BooleanSeqIn_init();
     BooleanSeqOut_init();
-	return 0;
+    return 0;
 }
 

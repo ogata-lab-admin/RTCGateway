@@ -65,17 +65,15 @@ void BooleanSeqIn_doWrite(t_BooleanSeqIn *x, t_symbol *s /* = NULL*/, double arg
     //outlet_int(x, argv[0].a_w.w_Double);
 }
 
-void BooleanSeqIn_write(t_object *x, double right_bumper, double center_bumper, double left_bumper){
-    post("bumper state is right:%d, center:%d, left:%f", right_bumper, center_bumper, left_bumper);
-    t_atom list_value[3];
-    float value[3];
-    short i;
-    value[0] = (float)right_bumper;
-    value[1] = (float)center_bumper;
-    value[2] = (float)left_bumper;
-    for (i=0; i < 3; i++) {
-        atom_setfloat(list_value+i, value[i]);
-    }
-    
-    outlet_list(((t_BooleanSeqIn*)x)->m_outlet1, 0, 3, list_value);
+void BooleanSeqIn_write(t_object *x, int argc, bool argv[]) { ///double right_bumper, double center_bumper, double left_bumper){
+  //post("bumper state is right:%d, center:%d, left:%f", right_bumper, center_bumper, left_bumper);
+  t_atom *list_value = new t_atom[argc];
+  long value[3];
+  for (int i = 0;i < argc;i++) {
+    value[i] = argv[i];
+    atom_setlong(list_value+i, value[i]);
+  }
+  outlet_list(((t_BooleanSeqIn*)x)->m_outlet1, 0, argc, list_value);
+  delete[] list_value;
+  delete value;
 }
