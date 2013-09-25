@@ -35,6 +35,10 @@
 		C39795C917EEC23900B01B2C /* Pose2DIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C39795C517EEC23900B01B2C /* Pose2DIn.h */; };
 		C39795CA17EEC23900B01B2C /* Pose2DOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39795C617EEC23900B01B2C /* Pose2DOut.cpp */; };
 		C39795CB17EEC23900B01B2C /* Pose2DOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C39795C717EEC23900B01B2C /* Pose2DOut.h */; };
+		C3E6A43E17F1944C00499DB9 /* BooleanSeqIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3E6A43A17F1944C00499DB9 /* BooleanSeqIn.cpp */; };
+		C3E6A43F17F1944C00499DB9 /* BooleanSeqIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E6A43B17F1944C00499DB9 /* BooleanSeqIn.h */; };
+		C3E6A44017F1944C00499DB9 /* BooleanSeqOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3E6A43C17F1944C00499DB9 /* BooleanSeqOut.cpp */; };
+		C3E6A44117F1944C00499DB9 /* BooleanSeqOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E6A43D17F1944C00499DB9 /* BooleanSeqOut.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		C39795C517EEC23900B01B2C /* Pose2DIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pose2DIn.h; sourceTree = "<group>"; };
 		C39795C617EEC23900B01B2C /* Pose2DOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pose2DOut.cpp; sourceTree = "<group>"; };
 		C39795C717EEC23900B01B2C /* Pose2DOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pose2DOut.h; sourceTree = "<group>"; };
+		C3E6A43A17F1944C00499DB9 /* BooleanSeqIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanSeqIn.cpp; sourceTree = "<group>"; };
+		C3E6A43B17F1944C00499DB9 /* BooleanSeqIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanSeqIn.h; sourceTree = "<group>"; };
+		C3E6A43C17F1944C00499DB9 /* BooleanSeqOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanSeqOut.cpp; sourceTree = "<group>"; };
+		C3E6A43D17F1944C00499DB9 /* BooleanSeqOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanSeqOut.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,10 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
+				C3E6A43A17F1944C00499DB9 /* BooleanSeqIn.cpp */,
+				C3E6A43B17F1944C00499DB9 /* BooleanSeqIn.h */,
+				C3E6A43C17F1944C00499DB9 /* BooleanSeqOut.cpp */,
+				C3E6A43D17F1944C00499DB9 /* BooleanSeqOut.h */,
 				C38F869317E177860090DA06 /* DoubleOut.h */,
 				C39795C417EEC23900B01B2C /* Pose2DIn.cpp */,
 				C39795C517EEC23900B01B2C /* Pose2DIn.h */,
@@ -147,6 +159,8 @@
 				C38F86A717E9BAE50090DA06 /* Velocity2DOut.h in Headers */,
 				C39795C917EEC23900B01B2C /* Pose2DIn.h in Headers */,
 				C39795CB17EEC23900B01B2C /* Pose2DOut.h in Headers */,
+				C3E6A43F17F1944C00499DB9 /* BooleanSeqIn.h in Headers */,
+				C3E6A44117F1944C00499DB9 /* BooleanSeqOut.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +265,8 @@
 				C38F86A617E9BAE50090DA06 /* Velocity2DOut.cpp in Sources */,
 				C39795C817EEC23900B01B2C /* Pose2DIn.cpp in Sources */,
 				C39795CA17EEC23900B01B2C /* Pose2DOut.cpp in Sources */,
+				C3E6A43E17F1944C00499DB9 /* BooleanSeqIn.cpp in Sources */,
+				C3E6A44017F1944C00499DB9 /* BooleanSeqOut.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

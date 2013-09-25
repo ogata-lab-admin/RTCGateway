@@ -273,15 +273,24 @@ class MAX_MSP_RTC
 public:
     
 #define MAX_PORT 16
-    /*
-     --Todo--
-     inPort: battery TimedDouble, crrentPose TimedPose2D, bumper TimedBooleanSeq
-     outPort : targetVelocity TimedVelocity2D, poseUpdated TimedPose2D
-     
-     */
-    
     //====================================
-    // For TimePose2D OutPort
+    // For TimeBooleanSeq OutPort
+    RTC::TimedBooleanSeq m_BooleanSeqOut[MAX_PORT];
+    OutPort<RTC::TimedBooleanSeq>* m_BooleanSeqOutOut[MAX_PORT];
+    
+    int addBooleanSeqOutPort(const char* name);
+    void deleteBooleanSeqOutPort(const int id);
+    
+    // Fro TimedBooleanSeq InPort
+    RTC::TimedBooleanSeq m_BooleanSeqIn[MAX_PORT];
+    InPort<RTC::TimedBooleanSeq>* m_BooleanSeqInIn[MAX_PORT];
+    t_object* m_BooleanSeqObjectList[MAX_PORT];
+    
+    int addBooleanSeqInPort(t_object *x, const char* name);
+    void deleteBooleanSeqInPort(const int id);
+    
+    
+    // For TimedPose2D OutPort
     RTC::TimedPose2D m_Pose2DOut[MAX_PORT];
     OutPort<RTC::TimedPose2D>* m_Pose2DOutOut[MAX_PORT];
     

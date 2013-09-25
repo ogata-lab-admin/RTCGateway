@@ -18,6 +18,10 @@
 #include "Velocity2DOut.h"
 #include "Pose2DIn.h"
 #include "Pose2DOut.h"
+#include "BooleanSeqIn.h"
+#include "BooleanSeqOut.h"
+
+
 
 int C74_EXPORT main(void)
 {
@@ -36,7 +40,9 @@ int C74_EXPORT main(void)
     
     Pose2DIn_init();
     Pose2DOut_init();
-    
+
+    BooleanSeqIn_init();
+    BooleanSeqOut_init();
 	return 0;
 }
 
