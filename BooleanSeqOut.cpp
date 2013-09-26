@@ -45,23 +45,17 @@ void BooleanSeqOut_free(t_BooleanSeqOut *x){
 }
 
 void BooleanSeqOut_write(t_BooleanSeqOut *x, t_symbol *s, long argc, t_atom *argv){
-    double value[3];
-    if (argc >= 3) {
-        for (int i = 0;i < 3;i++) {
-            if (argv[i].a_type == A_LONG) {
-                value[i] = argv[i].a_w.w_long;
-            } else if (argv[i].a_type == A_FLOAT) {
-                value[i] = argv[i].a_w.w_float;
-            } else {
-                post("Uncompatible value type of input for BooleanSeqOut");
-            }
+    m_pRTC->m_BooleanSeqOut[x->portId].data.length(argc);
+    for(int i = 0;i < argc;i++) {
+        if (argv[i].a_type == A_LONG) {
+            m_pRTC->m_BooleanSeqOut[x->portId].data[i] = argv[i].a_w.w_long;
+        } else if (argv[i].a_type == A_FLOAT) {
+            m_pRTC->m_BooleanSeqOut[x->portId].data[i] = argv[i].a_w.w_float;
+        } else {
+            post("Uncompatible value type of input for BooleanSeqOut");
         }
+        m_pRTC->m_BooleanSeqOutOut[x->portId]->write();
     }
-    m_pRTC->m_BooleanSeqOut[x->portId].data[0] = value[0];
-    m_pRTC->m_BooleanSeqOut[x->portId].data[1] = value[1];
-    m_pRTC->m_BooleanSeqOut[x->portId].data[2] = value[2];
-    
-    m_pRTC->m_BooleanSeqOutOut[x->portId]->write();
 }
 
 void *BooleanSeqOut_new(t_symbol *s, long argc, t_atom *argv){

@@ -68,7 +68,7 @@ void BooleanSeqIn_doWrite(t_BooleanSeqIn *x, t_symbol *s /* = NULL*/, double arg
 void BooleanSeqIn_write(t_object *x, int argc, bool argv[]) { ///double right_bumper, double center_bumper, double left_bumper){
   //post("bumper state is right:%d, center:%d, left:%f", right_bumper, center_bumper, left_bumper);
   t_atom *list_value = new t_atom[argc];
-  long value[3];
+    long *value = new long[argc];
   for (int i = 0;i < argc;i++) {
     value[i] = argv[i];
     atom_setlong(list_value+i, value[i]);
