@@ -46,6 +46,11 @@
 #include "BooleanSeqIn.h"
 #include "BooleanSeqOut.h"
 
+#include "Point2DIn.h"
+#include "Point2DOut.h"
+
+#include "UShortIn.h"
+#include "UShortOut.h"
 
 /**
  * MAX用オブジェクト
@@ -151,6 +156,7 @@ void RTM_init()
         manager->setModuleInitProc(MyModuleInit);
         manager->activateManager();
         manager->runManager(true);
+
     }
 }
 
@@ -191,14 +197,24 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         if (strcmp(argv[0].a_w.w_sym->s_name, "BooleanSeqOut") == 0){
             return BooleanSeqOut_new(s, argc, argv);
         }
-        
+        if (strcmp(argv[0].a_w.w_sym->s_name, "Point2DIn") == 0){
+            return Point2DIn_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "Point2DOut") == 0){
+            return Point2DOut_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "UShortIn") == 0) {
+            return UShortIn_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "UShortOut") == 0) {
+            return UShortOut_new(s, argc, argv);
+        }
     }
    
 	x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);
     
     RTM_init();
     ref_count ++;
-
     return x;
 }
 

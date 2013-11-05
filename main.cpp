@@ -20,8 +20,10 @@
 #include "Pose2DOut.h"
 #include "BooleanSeqIn.h"
 #include "BooleanSeqOut.h"
-
-
+#include "Point2DIn.h"
+#include "Point2DOut.h"
+#include "UShortIn.h"
+#include "UShortOut.h"
 
 int C74_EXPORT main(void)
 {
@@ -43,6 +45,13 @@ int C74_EXPORT main(void)
 
     BooleanSeqIn_init();
     BooleanSeqOut_init();
+    
+    Point2DIn_init();
+    Point2DOut_init();
+    
+    UShortIn_init();
+    UShortOut_init();
+
     return 0;
 }
 

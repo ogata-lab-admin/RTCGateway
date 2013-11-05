@@ -34,6 +34,14 @@
 		C39795D117EED1DD00B01B2C /* Pose2DIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C39795CD17EED1DD00B01B2C /* Pose2DIn.h */; };
 		C39795D217EED1DD00B01B2C /* Pose2DOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39795CE17EED1DD00B01B2C /* Pose2DOut.cpp */; };
 		C39795D317EED1DD00B01B2C /* Pose2DOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C39795CF17EED1DD00B01B2C /* Pose2DOut.h */; };
+		C3B42DFD18227088001D42B1 /* UShortOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B42DF518227088001D42B1 /* UShortOut.h */; };
+		C3B42DFE18227088001D42B1 /* UShortOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B42DF618227088001D42B1 /* UShortOut.cpp */; };
+		C3B42DFF18227088001D42B1 /* UShortIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B42DF718227088001D42B1 /* UShortIn.cpp */; };
+		C3B42E0018227088001D42B1 /* UShortIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B42DF818227088001D42B1 /* UShortIn.h */; };
+		C3B42E0118227088001D42B1 /* Point2DOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B42DF918227088001D42B1 /* Point2DOut.cpp */; };
+		C3B42E0218227088001D42B1 /* Point2DIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B42DFA18227088001D42B1 /* Point2DIn.h */; };
+		C3B42E0318227088001D42B1 /* Point2DIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3B42DFB18227088001D42B1 /* Point2DIn.cpp */; };
+		C3B42E0418227088001D42B1 /* Point2DOut.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B42DFC18227088001D42B1 /* Point2DOut.h */; };
 		C3E6A44617F1AEBB00499DB9 /* BooleanSeqIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3E6A44217F1AEBB00499DB9 /* BooleanSeqIn.cpp */; };
 		C3E6A44717F1AEBB00499DB9 /* BooleanSeqIn.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E6A44317F1AEBB00499DB9 /* BooleanSeqIn.h */; };
 		C3E6A44817F1AEBB00499DB9 /* BooleanSeqOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3E6A44417F1AEBB00499DB9 /* BooleanSeqOut.cpp */; };
@@ -70,6 +78,14 @@
 		C39795CD17EED1DD00B01B2C /* Pose2DIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pose2DIn.h; sourceTree = "<group>"; };
 		C39795CE17EED1DD00B01B2C /* Pose2DOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pose2DOut.cpp; sourceTree = "<group>"; };
 		C39795CF17EED1DD00B01B2C /* Pose2DOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pose2DOut.h; sourceTree = "<group>"; };
+		C3B42DF518227088001D42B1 /* UShortOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UShortOut.h; sourceTree = "<group>"; };
+		C3B42DF618227088001D42B1 /* UShortOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UShortOut.cpp; sourceTree = "<group>"; };
+		C3B42DF718227088001D42B1 /* UShortIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UShortIn.cpp; sourceTree = "<group>"; };
+		C3B42DF818227088001D42B1 /* UShortIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UShortIn.h; sourceTree = "<group>"; };
+		C3B42DF918227088001D42B1 /* Point2DOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point2DOut.cpp; sourceTree = "<group>"; };
+		C3B42DFA18227088001D42B1 /* Point2DIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point2DIn.h; sourceTree = "<group>"; };
+		C3B42DFB18227088001D42B1 /* Point2DIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point2DIn.cpp; sourceTree = "<group>"; };
+		C3B42DFC18227088001D42B1 /* Point2DOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point2DOut.h; sourceTree = "<group>"; };
 		C3E6A44217F1AEBB00499DB9 /* BooleanSeqIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanSeqIn.cpp; sourceTree = "<group>"; };
 		C3E6A44317F1AEBB00499DB9 /* BooleanSeqIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanSeqIn.h; sourceTree = "<group>"; };
 		C3E6A44417F1AEBB00499DB9 /* BooleanSeqOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanSeqOut.cpp; sourceTree = "<group>"; };
@@ -107,6 +123,14 @@
 				C39795CC17EED1DD00B01B2C /* Pose2DIn.cpp */,
 				C39795CD17EED1DD00B01B2C /* Pose2DIn.h */,
 				C39795CE17EED1DD00B01B2C /* Pose2DOut.cpp */,
+				C3B42DF518227088001D42B1 /* UShortOut.h */,
+				C3B42DF618227088001D42B1 /* UShortOut.cpp */,
+				C3B42DF718227088001D42B1 /* UShortIn.cpp */,
+				C3B42DF818227088001D42B1 /* UShortIn.h */,
+				C3B42DF918227088001D42B1 /* Point2DOut.cpp */,
+				C3B42DFA18227088001D42B1 /* Point2DIn.h */,
+				C3B42DFB18227088001D42B1 /* Point2DIn.cpp */,
+				C3B42DFC18227088001D42B1 /* Point2DOut.h */,
 				C39795CF17EED1DD00B01B2C /* Pose2DOut.h */,
 				09B283A917C4FA8400B9284A /* libRTC.a */,
 				09B283AA17C4FA8400B9284A /* libcoil.a */,
@@ -159,6 +183,10 @@
 				C39795D317EED1DD00B01B2C /* Pose2DOut.h in Headers */,
 				C3E6A44717F1AEBB00499DB9 /* BooleanSeqIn.h in Headers */,
 				C3E6A44917F1AEBB00499DB9 /* BooleanSeqOut.h in Headers */,
+				C3B42DFD18227088001D42B1 /* UShortOut.h in Headers */,
+				C3B42E0018227088001D42B1 /* UShortIn.h in Headers */,
+				C3B42E0218227088001D42B1 /* Point2DIn.h in Headers */,
+				C3B42E0418227088001D42B1 /* Point2DOut.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +293,10 @@
 				C39795D217EED1DD00B01B2C /* Pose2DOut.cpp in Sources */,
 				C3E6A44617F1AEBB00499DB9 /* BooleanSeqIn.cpp in Sources */,
 				C3E6A44817F1AEBB00499DB9 /* BooleanSeqOut.cpp in Sources */,
+				C3B42DFE18227088001D42B1 /* UShortOut.cpp in Sources */,
+				C3B42DFF18227088001D42B1 /* UShortIn.cpp in Sources */,
+				C3B42E0118227088001D42B1 /* Point2DOut.cpp in Sources */,
+				C3B42E0318227088001D42B1 /* Point2DIn.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
