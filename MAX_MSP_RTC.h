@@ -274,6 +274,21 @@ public:
     
 #define MAX_PORT 16
     //====================================
+    // For TimedPoint2D OutPort
+    RTC::TimedPoint2D m_Point2DOut[MAX_PORT];
+    OutPort<RTC::TimedPoint2D>* m_Point2DOutOut[MAX_PORT];
+    
+    int addPoint2DOutPort(const char* name);
+    void deletePoint2DOutPort(const int id);
+    
+    // Fro TimedPoint2D InPort
+    RTC::TimedPoint2D m_Point2DIn[MAX_PORT];
+    InPort<RTC::TimedPoint2D>* m_Point2DInIn[MAX_PORT];
+    t_object* m_Point2DObjectList[MAX_PORT];
+    
+    int addPoint2DInPort(t_object *x, const char* name);
+    void deletePoint2DInPort(const int id);
+    
     // For TimeBooleanSeq OutPort
     RTC::TimedBooleanSeq m_BooleanSeqOut[MAX_PORT];
     OutPort<RTC::TimedBooleanSeq>* m_BooleanSeqOutOut[MAX_PORT];
@@ -343,13 +358,28 @@ public:
     int addDoubleOutPort(const char* name);
     void deleteDoubleOutPort(const int id);
     
-    // For TimedLong InPort
+    // For TimedDouble InPort
     RTC::TimedDouble m_doubleIn[MAX_PORT];
     InPort<RTC::TimedDouble>* m_doubleInIn[MAX_PORT];
     t_object* m_doubleObjectList[MAX_PORT];
     
     int addDoubleInPort(t_object *x, const char* name);
     void deleteDoubleInPort(const int id);
+    
+    // For TimedUShort OutPort
+    RTC::TimedUShort m_UShortOut[MAX_PORT];
+    OutPort<RTC::TimedUShort>* m_UShortOutOut[MAX_PORT];
+    
+    int addUShortOutPort(const char* name);
+    void deleteUShortOutPort(const int id);
+    
+    // For TimedUShort InPort
+    RTC::TimedUShort m_UShortIn[MAX_PORT];
+    InPort<RTC::TimedUShort>* m_UShortInIn[MAX_PORT];
+    t_object* m_UShortObjectList[MAX_PORT];
+    
+    int addUShortInPort(t_object *x, const char* name);
+    void deleteUShortInPort(const int id);
 
 };
 

@@ -25,6 +25,8 @@
 #include "Velocity2DIn.h"
 #include "Pose2DIn.h"
 #include "BooleanSeqIn.h"
+#include "Point2DIn.h"
+#include "UShortIn.h"
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -60,6 +62,10 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
     // </rtc-template>
 {
     for (int i = 0;i < MAX_PORT;i++) {
+        m_UShortInIn[i] = NULL;
+        m_UShortOutOut[i] = NULL;
+        m_Point2DInIn[i] = NULL;
+        m_Point2DOutOut[i] = NULL;
         m_BooleanSeqInIn[i] = NULL;
         m_BooleanSeqOutOut[i] = NULL;
         m_Pose2DInIn[i] = NULL;
@@ -80,6 +86,10 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
 MAX_MSP_RTC::~MAX_MSP_RTC()
 {
     for (int i = 0;i < MAX_PORT;i++) {
+        delete m_UShortInIn[i];
+        delete m_UShortOutOut[i];
+        delete m_Point2DInIn[i];
+        delete m_Point2DOutOut[i];
         delete m_BooleanSeqInIn[i];
         delete m_BooleanSeqOutOut[i];
         delete m_Pose2DInIn[i];
@@ -274,7 +284,7 @@ void MAX_MSP_RTC::deletePose2DInPort(const int id){
     }
 }
 
-////----------------------pose2d-----------------------/////
+////----------------------booleanseq-----------------------/////
 
 int MAX_MSP_RTC::addBooleanSeqOutPort(const char* name){
     for (int i = 0; i < MAX_PORT; i++) {
@@ -316,6 +326,96 @@ void MAX_MSP_RTC::deleteBooleanSeqInPort(const int id){
             this->deletePort(*(m_BooleanSeqInIn[id]));
             delete m_BooleanSeqInIn[id];
             m_BooleanSeqInIn[id] = NULL;
+        }
+    }
+}
+
+////----------------------point2d-----------------------/////
+
+int MAX_MSP_RTC::addPoint2DOutPort(const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Point2DOutOut[i] == NULL) {
+            m_Point2DOutOut[i] = new OutPort<TimedPoint2D>(name, m_Point2DOut[i]);
+            addOutPort(name, *m_Point2DOutOut[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deletePoint2DOutPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Point2DOutOut[id] != NULL) {
+            this->deletePort(*(m_Point2DOutOut[id]));
+            delete m_Point2DOutOut[id];
+            m_Point2DOutOut[id] = NULL;
+            
+        }
+    }
+}
+
+int MAX_MSP_RTC::addPoint2DInPort(t_object* x, const char* name){
+    for (int i = 0; i < MAX_PORT; i++) {
+        if (m_Point2DInIn[i] == NULL) {
+            m_Point2DInIn[i] = new InPort<TimedPoint2D>(name, m_Point2DIn[i]);
+            m_Point2DObjectList[i] = x;
+            addInPort(name, *m_Point2DInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deletePoint2DInPort(const int id){
+    if (id < MAX_PORT && id >= 0) {
+        if (m_Point2DInIn[id] != NULL) {
+            this->deletePort(*(m_Point2DInIn[id]));
+            delete m_Point2DInIn[id];
+            m_Point2DInIn[id] = NULL;
+        }
+    }
+}
+
+////----------------------UShort-----------------------/////
+int MAX_MSP_RTC::addUShortOutPort(const char* name) {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_UShortOutOut[i] == NULL) {
+            m_UShortOutOut[i] = new OutPort<TimedUShort>(name, m_UShortOut[i]);
+            addOutPort(name, *m_UShortOutOut[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteUShortOutPort(const int id) {
+    if (id < MAX_PORT && id >= 0) {
+        if (m_UShortOutOut[id] != NULL) {
+            this->deletePort(*(m_UShortOutOut[id]));
+            delete m_UShortOutOut[id];
+            m_UShortOutOut[id] = NULL;
+        }
+    }
+}
+
+int MAX_MSP_RTC::addUShortInPort(t_object* x, const char* name) {
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_UShortInIn[i] == NULL) {
+            m_UShortInIn[i] = new InPort<TimedUShort>(name, m_UShortIn[i]);
+            m_UShortObjectList[i] = x;
+            addInPort(name, *m_UShortInIn[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MAX_MSP_RTC::deleteUShortInPort(const int id) {
+    if (id < MAX_PORT && id >= 0) {
+        if (m_UShortInIn[id] != NULL) {
+            this->deletePort(*(m_UShortInIn[id]));
+            delete m_UShortInIn[id];
+            m_UShortInIn[id] = NULL;
         }
     }
 }
@@ -431,6 +531,24 @@ RTC::ReturnCode_t MAX_MSP_RTC::onExecute(RTC::UniqueId ec_id)
             if (m_BooleanSeqInIn[i]->isNew()) {
                 m_BooleanSeqInIn[i]->read();
                 BooleanSeqIn_write(m_BooleanSeqObjectList[i], m_BooleanSeqIn[i].data.length(), &(m_BooleanSeqIn[i].data[0]));
+            }
+        }
+    }
+    
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_Point2DInIn[i] != NULL) {
+            if (m_Point2DInIn[i]->isNew()) {
+                m_Point2DInIn[i]->read();
+                Point2DIn_write(m_Point2DObjectList[i], m_Point2DIn[i].data.x, m_Point2DIn[i].data.y);
+            }
+        }
+    }
+    
+    for (int i = 0;i < MAX_PORT;i++) {
+        if (m_UShortInIn[i] != NULL) {
+            if (m_UShortInIn[i]->isNew()) {
+                m_UShortInIn[i]->read();
+                UShortIn_write(m_UShortObjectList[i], m_UShortIn[i].data);
             }
         }
     }
