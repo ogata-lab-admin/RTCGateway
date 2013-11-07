@@ -53,7 +53,7 @@ void UShortIn_doWrite(t_UShortIn *x, t_symbol *s /* = NULL*/, long argc, t_atom 
 
 void UShortIn_write(t_object *x, int m)
 {
-    post("data is %d", m);
+    post("Ushort data is %d", m);
     outlet_int(((t_UShortIn*)x)->m_outlet, m);
 }
 

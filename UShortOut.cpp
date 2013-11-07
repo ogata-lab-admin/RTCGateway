@@ -50,8 +50,8 @@ void UShortOut_free(t_UShortOut *x)
 
 void UShortOut_write(t_UShortOut *x, int m)
 {
-    m_pRTC->m_longOut[x->portId].data = m;
-    m_pRTC->m_longOutOut[x->portId]->write();
+    m_pRTC->m_UShortOut[x->portId].data = m;
+    m_pRTC->m_UShortOutOut[x->portId]->write();
 }
 
 void *UShortOut_new(t_symbol *s, long argc, t_atom *argv)
