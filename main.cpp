@@ -24,6 +24,7 @@
 #include "Point2DOut.h"
 #include "UShortIn.h"
 #include "UShortOut.h"
+#include "NAO.h"
 
 int C74_EXPORT main(void)
 {
@@ -51,6 +52,8 @@ int C74_EXPORT main(void)
     
     UShortIn_init();
     UShortOut_init();
+    
+    NAO_init();
 
     return 0;
 }

@@ -58,7 +58,8 @@ static const char* MAX_MSP_RTC_spec[] =
  */
 MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
     // <rtc-template block="initializer">
-  : RTC::DataFlowComponentBase(manager)
+  : RTC::DataFlowComponentBase(manager),
+m_NAOServicePort("NAOService"), m_NAOPort_usage_count(0)
     // </rtc-template>
 {
     for (int i = 0;i < MAX_PORT;i++) {
@@ -76,7 +77,6 @@ MAX_MSP_RTC::MAX_MSP_RTC(RTC::Manager* manager)
         m_doubleInIn[i] = NULL;
         m_Velocity2DOutOut[i] = NULL;
         m_Velocity2DInIn[i]=NULL;
-        
     }
 }
 
@@ -103,6 +103,28 @@ MAX_MSP_RTC::~MAX_MSP_RTC()
     }
 }
 
+int MAX_MSP_RTC::addNAOPort() {
+    // Set service consumers to Ports
+    m_NAOServicePort.registerConsumer("ALMotion", "ssr::ALMotion", m_motion);
+    m_NAOServicePort.registerConsumer("ALTextToSpeech", "ssr::ALTextToSpeech", m_textToSpeech);
+    m_NAOServicePort.registerConsumer("ALBehaviorManager", "ssr::ALBehaviorManager", m_behaviorManager);
+    m_NAOServicePort.registerConsumer("ALMemory", "ssr::ALMemory", m_memory);
+    m_NAOServicePort.registerConsumer("ALVideoDevice", "ssr::ALVideoDevice", m_videoDevice);
+    m_NAOServicePort.registerConsumer("ALLeds", "ssr::ALLeds", m_leds);
+    
+    // Set CORBA Service Ports
+    addPort(m_NAOServicePort);
+    
+    m_NAOPort_usage_count++;
+    return 0;
+}
+
+void MAX_MSP_RTC::deleteNAOPort() {
+    m_NAOPort_usage_count--;
+    if(m_NAOPort_usage_count == 0) {
+        deletePort(m_NAOServicePort);
+    }
+}
 
 ////----------------------long-----------------------/////
 int MAX_MSP_RTC::addLongOutPort(const char* name) {

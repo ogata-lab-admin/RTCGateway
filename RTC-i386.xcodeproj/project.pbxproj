@@ -12,6 +12,10 @@
 		094CE57F17C4FAE7007E4292 /* libomniDynamic4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 094CE57C17C4FAE7007E4292 /* libomniDynamic4.a */; };
 		094CE58017C4FAE7007E4292 /* libomniORB4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 094CE57D17C4FAE7007E4292 /* libomniORB4.a */; };
 		094CE58117C4FAE7007E4292 /* libomnithread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 094CE57E17C4FAE7007E4292 /* libomnithread.a */; };
+		094F4653185F21F100627C91 /* NAO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 094F4650185F21F100627C91 /* NAO.cpp */; };
+		094F4654185F21F100627C91 /* NAO.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F4651185F21F100627C91 /* NAO.h */; };
+		094F4655185F21F100627C91 /* NAO.hh in Headers */ = {isa = PBXBuildFile; fileRef = 094F4652185F21F100627C91 /* NAO.hh */; };
+		094F4657185F220500627C91 /* NAOStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 094F4656185F220500627C91 /* NAOStub.cpp */; };
 		09737C1517C1C6CE007379FE /* MAX_MSP_RTC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */; };
 		09737C1617C1C6CE007379FE /* MAX_MSP_RTC.h in Headers */ = {isa = PBXBuildFile; fileRef = 09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */; };
 		09A4DADC17C4F5570051C86B /* maxmspsdk.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 09A4DADB17C4F5570051C86B /* maxmspsdk.xcconfig */; };
@@ -55,6 +59,10 @@
 		094CE57C17C4FAE7007E4292 /* libomniDynamic4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniDynamic4.a; path = "rtmsdk-mac/i386/lib/libomniDynamic4.a"; sourceTree = "<group>"; };
 		094CE57D17C4FAE7007E4292 /* libomniORB4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomniORB4.a; path = "rtmsdk-mac/i386/lib/libomniORB4.a"; sourceTree = "<group>"; };
 		094CE57E17C4FAE7007E4292 /* libomnithread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomnithread.a; path = "rtmsdk-mac/i386/lib/libomnithread.a"; sourceTree = "<group>"; };
+		094F4650185F21F100627C91 /* NAO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NAO.cpp; sourceTree = "<group>"; };
+		094F4651185F21F100627C91 /* NAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAO.h; sourceTree = "<group>"; };
+		094F4652185F21F100627C91 /* NAO.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NAO.hh; sourceTree = "<group>"; };
+		094F4656185F220500627C91 /* NAOStub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NAOStub.cpp; sourceTree = "<group>"; };
 		09737C1317C1C6CE007379FE /* MAX_MSP_RTC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MAX_MSP_RTC.cpp; sourceTree = "<group>"; };
 		09737C1417C1C6CE007379FE /* MAX_MSP_RTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAX_MSP_RTC.h; sourceTree = "<group>"; };
 		09A4DADB17C4F5570051C86B /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = maxmspsdk.xcconfig; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
+				094F4656185F220500627C91 /* NAOStub.cpp */,
+				094F4650185F21F100627C91 /* NAO.cpp */,
+				094F4651185F21F100627C91 /* NAO.h */,
+				094F4652185F21F100627C91 /* NAO.hh */,
 				C3B42DE518226888001D42B1 /* Point2DIn.cpp */,
 				C3B42DE618226888001D42B1 /* Point2DIn.h */,
 				C3B42DE718226888001D42B1 /* Point2DOut.cpp */,
@@ -180,7 +192,9 @@
 				C38F868517E151E90090DA06 /* DoubleIn.h in Headers */,
 				C38F869517E177860090DA06 /* DoubleOut.h in Headers */,
 				C38F86A517E9BAE50090DA06 /* Velocity2DIn.h in Headers */,
+				094F4655185F21F100627C91 /* NAO.hh in Headers */,
 				C38F86A717E9BAE50090DA06 /* Velocity2DOut.h in Headers */,
+				094F4654185F21F100627C91 /* NAO.h in Headers */,
 				C39795C917EEC23900B01B2C /* Pose2DIn.h in Headers */,
 				C39795CB17EEC23900B01B2C /* Pose2DOut.h in Headers */,
 				C3E6A43F17F1944C00499DB9 /* BooleanSeqIn.h in Headers */,
@@ -294,11 +308,13 @@
 				C39795C817EEC23900B01B2C /* Pose2DIn.cpp in Sources */,
 				C39795CA17EEC23900B01B2C /* Pose2DOut.cpp in Sources */,
 				C3E6A43E17F1944C00499DB9 /* BooleanSeqIn.cpp in Sources */,
+				094F4653185F21F100627C91 /* NAO.cpp in Sources */,
 				C3E6A44017F1944C00499DB9 /* BooleanSeqOut.cpp in Sources */,
 				C3B42DE918226888001D42B1 /* Point2DIn.cpp in Sources */,
 				C3B42DEB18226888001D42B1 /* Point2DOut.cpp in Sources */,
 				C3B42DF118226D08001D42B1 /* UShortIn.cpp in Sources */,
 				C3B42DF318226D08001D42B1 /* UShortOut.cpp in Sources */,
+				094F4657185F220500627C91 /* NAOStub.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

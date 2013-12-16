@@ -36,6 +36,7 @@ using namespace RTC;
 #include "ext.h"
 #include "ext_obex.h"
 
+#include "NAOStub.h"
 /*!
  * @class MAX_MSP_RTC
  * @brief Max/Msp intermediate module 
@@ -382,7 +383,44 @@ public:
     
     int addUShortInPort(t_object *x, const char* name);
     void deleteUShortInPort(const int id);
+    
+    
+  public:
+    
+    // For NAO
+    /*!
+     */
+    RTC::CorbaPort m_NAOServicePort;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALMotion> m_motion;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALTextToSpeech> m_textToSpeech;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALBehaviorManager> m_behaviorManager;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALMemory> m_memory;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALVideoDevice> m_videoDevice;
+    /*!
+     */
+    RTC::CorbaConsumer<ssr::ALLeds> m_leds;
 
+    uint32_t m_NAOPort_usage_count;
+    int addNAOPort();
+    void deleteNAOPort();
+    
+    bool isNAOConnected() {
+        RTC::ConnectorProfileList* cpl = m_NAOServicePort.get_connector_profiles();
+        if((*cpl).length() > 0) {
+            return true;
+        }
+        return false;
+    }
 };
 
 

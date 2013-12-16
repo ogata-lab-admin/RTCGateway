@@ -52,6 +52,8 @@
 #include "UShortIn.h"
 #include "UShortOut.h"
 
+#include "NAO.h"
+
 /**
  * MAX用オブジェクト
  */
@@ -208,6 +210,9 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         }
         if (strcmp(argv[0].a_w.w_sym->s_name, "UShortOut") == 0) {
             return UShortOut_new(s, argc, argv);
+        }
+        if (strcmp(argv[0].a_w.w_sym->s_name, "NAO") == 0) {
+            return NAO_new(s, argc, argv);
         }
     }
    
