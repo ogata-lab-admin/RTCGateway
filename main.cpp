@@ -1,6 +1,6 @@
 /**
  * @file RTMPort.cpp
- * @author Yuki Suga (Sugar Sweet Robotics / Ogata Lab. Waseda Univ.)
+ * @author Yuki Suga (Sugar Sweet Robotics / Ogata Lab. Waseda Univ.), Kazuma Sasaki (Ogata Lab.)
  * @url http://ogata-lab.jp
  * @license MIT License
  * @copyright 2013, Ogata Laboratory, Waseda University
@@ -28,7 +28,8 @@
 
 int C74_EXPORT main(void)
 {
-    RTM_init();
+    post("main function called.");
+    //RTM_init((t_object*)NULL);
     
     RTCGateway_init();
 

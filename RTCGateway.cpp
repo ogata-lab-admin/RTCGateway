@@ -2,7 +2,7 @@
 //  RTCGateway.cpp
 //  RTCGateway-x86_64
 //
-//  Created by 菅 佑樹 on 2013/08/21.
+//  Author: Yuki Suga, Kazuma Sasaki
 //
 //
 
@@ -147,18 +147,38 @@ void RTCGateway_init()
 }
 
 
-void RTM_init()
+void RTM_init(t_object *x)
 {
     if (manager == NULL) {
-        int argc = 1;
-        char pgm[] = "RTCGateway";
-        char* argv[] = {pgm};
+        int argc = 3;
+        //char pgm[] = "RTCGateway";
+        
+        t_object *mypatcher;
+        
+        object_obex_lookup(x, gensym("#P"), &mypatcher);
+        //post("my patcher is at address %lx",mypatcher);
+        t_symbol *path = object_attr_getsym(mypatcher, gensym("filepath"));
+        post("my patcher is in %s", path->s_name);
+        
+        //char* fullpath = strdup("Macintosh HD:/Users/ysuga/Development/rtm/wasanbon/workspace/nao/rtc/NAO/RTCGateway.maxhelp");
+        char* root = strchr(path->s_name, ':');
+        char* filepath = strrchr((char*)root+1, '/');
+        filepath[1] = '\0';
+        post("filepath = %s", root+1);
+        
+        char strbuf[256];
+        strcpy(strbuf, root+1);
+        strcpy(strbuf + strlen(root+1), "rtc.conf");
+
+        post("strbuf = %s", strbuf);
+        
+        //String mainPatcherPath = this.getParentPatcher().getFilePath();
+        char* argv[] = {"RTCGateway", "-f", strbuf};
         manager = RTC::Manager::init(argc, argv);
         manager->init(argc, argv);
         manager->setModuleInitProc(MyModuleInit);
         manager->activateManager();
         manager->runManager(true);
-
     }
 }
 
@@ -169,6 +189,12 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         post("RTCGateway may accept one argument which is to be an RTC's name.");
     } else {
     
+        x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);
+        
+        RTM_init((t_object*)x);
+        ref_count ++;
+
+        
         if (strcmp(argv[0].a_w.w_sym->s_name, "LongIn") == 0) {
             return LongIn_new(s, argc, argv);
         }
@@ -216,10 +242,6 @@ void *RTCGateway_new(t_symbol *s, long argc, t_atom *argv)
         }
     }
    
-	x = (t_RTCGateway *)object_alloc((t_class*)RTCGateway_class);
-    
-    RTM_init();
-    ref_count ++;
     return x;
 }
 

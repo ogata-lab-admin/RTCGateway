@@ -10,4 +10,4 @@
 
 
 
-void RTM_init();
+void RTM_init(t_object*);

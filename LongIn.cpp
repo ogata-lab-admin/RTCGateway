@@ -59,6 +59,7 @@ void LongIn_write(t_object *x, long m)
 
 void *LongIn_new(t_symbol *s, long argc, t_atom *argv)
 {
+    post("LongIn_new");
 	t_LongIn *x = NULL;
     if (argc == 0) {
         post("LongIn needs one argument that means port_name.");
