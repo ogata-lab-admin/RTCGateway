@@ -2,7 +2,7 @@
 //  Point2DOut.h
 //  RTMPort-x86_64
 //
-//  Created by 菅 佑樹 on 2013/08/21.
+//  Created by kazuma sasaki@ogata-lab on 2013/08/21.
 //
 //
 

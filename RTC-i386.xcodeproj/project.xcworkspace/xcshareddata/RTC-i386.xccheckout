@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>223F0679-5D63-4F17-8D4D-52B74B85DA01</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RTC-i386</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09650387-40C6-4498-8A1B-BB8DA69AEA0E</key>
+		<string>https://github.com/ogata-lab/RTCGateway</string>
+		<key>C7AEA62F-9302-48E0-8B0B-34A910A8F82E</key>
+		<string>https://github.com/ogata-lab/rtmsdk-mac.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RTC-i386.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09650387-40C6-4498-8A1B-BB8DA69AEA0E</key>
+		<string>../..</string>
+		<key>C7AEA62F-9302-48E0-8B0B-34A910A8F82E</key>
+		<string>../../rtmsdk-mac</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ogata-lab/RTCGateway</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09650387-40C6-4498-8A1B-BB8DA69AEA0E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09650387-40C6-4498-8A1B-BB8DA69AEA0E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RTCGateway</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7AEA62F-9302-48E0-8B0B-34A910A8F82E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>rtmsdk-mac</string>
+		</dict>
+	</array>
+</dict>
+</plist>
